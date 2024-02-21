@@ -1,6 +1,47 @@
-.display{
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    border: 2px solid violet;
+}
+
+.display {
     border: 2px solid black;
     width: 200px;
     text-align: right;
+    margin-bottom: 20px;
+}
+
+.displayMain {
+    border: 2px solid blue;
+    text-align: right;
     padding: 16px;
 }
+
+.displayUpper {
+    max-width: 200px;
+    text-align: right;
+    padding: 16px;
+}
+
+button {
+    font-size: 40px;
+    padding: 20px;
+    margin: 4px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    max-width: 300px;
+    flex-wrap: wrap;
+    border: 2px solid red;
+}
+
+#op{
+    flex: 1;
+}
+
+#del{flex:2;}
