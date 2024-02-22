@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka:wght@300..700&family=Kode+Mono:wght@400..700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+
+    <div class="heading">
+        CALCULATOR
+    </div>
+
     <div class="main">
+
 
         <div class="display">
             <div class="displayUpper">
@@ -19,30 +32,44 @@
 
         <div class="buttons">
 
-                <button  class="keyrows" id="op">AC</button>
-                <button class="keyrows" id="del">DEL</button>
+            <div class="btnsTop">
+                <button class="keyrows top" id="op">AC</button>
+                <button class="keyrows top" id="del">DEL</button>
+            </div>
 
+            <div class="btns">
                 <button class="keyrows" id="num" value="7">7</button>
-                <button  class="keyrows" id="num"value="8">8</button>
+                <button class="keyrows" id="num" value="8">8</button>
                 <button class="keyrows" id="num" value="9">9</button>
                 <button class="keyrows" id="op" value="/">/</button>
+            </div>
 
+            <div class="btns">
                 <button class="keyrows" id="num" value="4">4</button>
-                <button  class="keyrows" id="num"value="5">5</button>
-                <button  class="keyrows" id="num"value="6">6</button>
-                <button  class="keyrows" id="op"value="*">*</button>
+                <button class="keyrows" id="num" value="5">5</button>
+                <button class="keyrows" id="num" value="6">6</button>
+                <button class="keyrows" id="op" value="*">*</button>
+            </div>
 
+            <div class="btns">
                 <button class="keyrows" id="num" value="1">1</button>
                 <button class="keyrows" id="num" value="2">2</button>
                 <button class="keyrows" id="num" value="3">3</button>
                 <button class="keyrows" id="op" value="-">-</button>
+            </div>
 
+            <div class="btns">
                 <button class="keyrows" id="num" value="0">0</button>
-                <button class="decimal" id="num" value="."> . </button>
+                <button class="decimal" id="num" value=".">.</button>
                 <button class="keyrows" id="op" value="=">=</button>
                 <button class="keyrows" id="op" value="+">+</button>
+            </div>
 
         </div>
     </div>
+    <div class="footer">
+        © Umair Khan 
+    </div>
 </body>
+
 </html>

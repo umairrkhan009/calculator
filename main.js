@@ -14,6 +14,8 @@ let divide = function (firstNum, lastNum) {
     return parseFloat(firstNum) / parseFloat(lastNum)
 }
 
+
+
 let operate = function (operator, firstNum, lastNum) {
     switch (operator) {
         case "+":
@@ -34,7 +36,7 @@ let operate = function (operator, firstNum, lastNum) {
     }
 }
 
-
+let num;
 let operator = '';
 let firstNum = '';
 let lastNum = '';
@@ -42,6 +44,7 @@ let result = '';
 let opCount = 0
 let opPressed = false
 let decimalPressed = false
+let displayEmpty = true
 
 const numbers = document.querySelectorAll('#num')
 const operatations = document.querySelectorAll('#op')
@@ -54,7 +57,10 @@ const displayUpper = document.querySelector('.displayUpper')
 
 
 const roundResult = function (result, decimalPlaces = 8) {
-    return parseFloat(result.toFixed(decimalPlaces))
+    if (!isFinite(result)) {
+        return "No, you can't"
+    }
+    else { return parseFloat(result.toFixed(decimalPlaces)) }
 }
 
 const disableDecimal = function () {
@@ -67,7 +73,8 @@ const enableDecimal = function () {
 
 
 const inputNumber = function (e) {
-    let num = e.target.innerHTML
+    num = e.target.innerHTML
+    displayEmpty = false
     if (num == '.') {
         decimalPressed = true
         disableDecimal()
@@ -89,6 +96,7 @@ const allClear = function () {
     opCount = 0
     opPressed = false
     decimalPressed = false
+    displayEmpty = true
     enableDecimal()
 }
 
@@ -117,25 +125,41 @@ operatations.forEach((op) => {
         enableDecimal()
         let value = e.target.innerHTML
         if (value == '+' || value == '-' || value == '*' || value == '/') {
-            if (opCount >= 2) {
-                lastNum = parseFloat(display.innerHTML)
-                displayUpper.innerHTML = firstNum + " " + operator + " " + lastNum
-                firstNum = operate(operator, firstNum, lastNum)
-
+            if (displayEmpty == true) {
+                allClear()
             }
-            operator = value
-            if (opCount < 2) {
-                firstNum = parseFloat(display.innerHTML)
-                displayUpper.innerHTML = firstNum + " " + operator
+            else {
+                if (opCount >= 2) {
+                    lastNum = parseFloat(display.innerHTML)
+                    displayUpper.innerHTML = firstNum + " " + operator + " " + lastNum
+                    firstNum = operate(operator, firstNum, lastNum)
+
+                }
+                operator = value
+                if (opCount < 2) {
+                    firstNum = parseFloat(display.innerHTML)
+                    displayUpper.innerHTML = firstNum + " " + operator
+                }
             }
         }
         else if (value == '=') {
-            lastNum = parseFloat(display.innerHTML)
-            let result = operate(operator, firstNum, lastNum)
-            display.innerHTML = roundResult(result)
-            displayUpper.innerHTML = firstNum + " " + operator + " " + lastNum
-            opCount = 0
-            enableDecimal()
+            if (displayEmpty == true) {
+                allClear()
+            }
+            else {
+                if (opCount == 1) {
+                    display.innerHTML = 'bruh'
+                }
+                else {
+                    lastNum = parseFloat(display.innerHTML)
+                    let result = operate(operator, firstNum, lastNum)
+                    display.innerHTML = roundResult(result)
+                    displayUpper.innerHTML = firstNum + " " + operator + " " + lastNum
+                    opCount = 0
+                    enableDecimal()
+                }
+
+            }
         }
         else if (value == 'AC') {
             allClear()

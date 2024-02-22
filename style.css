@@ -1,47 +1,121 @@
+.bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+
+.fredoka-yes {
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+
+.kode-mono {
+  font-family: "Kode Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+  
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    border: 2px solid violet;
+    background-color: #944E63;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 36px;
+    overflow: hidden;
+
+}
+
+.heading{
+    font-size: 80px;
+    color: white;
+    font-family: "Bebas Neue";
+}
+
+.footer{
+    color: white;
+    font-size: 26px;
+    margin-top: 30px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 20px;
+    background-color: 	#FFE7E7;
+    border-radius: 8px;
 }
 
 .display {
     border: 2px solid black;
-    width: 200px;
     text-align: right;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    min-height: 70px;
+    background-color: #85586F;
 }
 
 .displayMain {
-    border: 2px solid blue;
     text-align: right;
-    padding: 16px;
+    padding: 0 16px;
+    flex: 1;
+    font-size: 36px;
+    font-family: "Fredoka";
+    height: 20px;
 }
 
 .displayUpper {
-    max-width: 200px;
-    text-align: right;
-    padding: 16px;
+    text-align: left;
+    padding: 0 8px;
+    font-size: 25px;
+    font-family: "Fredoka";
+    height: 20px;
 }
 
-button {
-    font-size: 40px;
-    padding: 20px;
-    margin: 4px;
+button{
+    font-size: 30px;
+    margin: 6px;
+    height: 50px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #CAA6A6;
+    font-family: "Fredoka";
 }
 
 .buttons{
     display: flex;
+    flex-direction: column;
+    background-color: #FFE7E7;
+}
+
+
+.btns :hover{
+    background-color: #B47B84;
+}
+
+.btnsTop{
+    display: flex;
     flex-direction: row;
-    max-width: 300px;
-    flex-wrap: wrap;
-    border: 2px solid red;
+    justify-content: center;
 }
 
-#op{
+.top{
     flex: 1;
+    background-color: #944E63;
 }
-
-#del{flex:2;}
